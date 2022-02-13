@@ -8,6 +8,11 @@ class TestCase(unittest.TestCase):
       # cannot have an empty string in the password
       self.assertFalse(check_pwd(nums))
 
+  def test2(self):
+      nums = "8675309"
+      # cannot have pwd < 8 characters
+      self.assertFalse(check_pwd(nums))
+
 
 if __name__ == '__main__':
   unittest.main()
