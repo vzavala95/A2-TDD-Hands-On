@@ -27,6 +27,9 @@ class TestCase(unittest.TestCase):
       nums = "KRATOS123456789"
       # have to have a password with at least one lowercase letter
       self.assertFalse(check_pwd(nums))
+  def test6(self):
+      nums = "therearenoDigits"
+      self.assertFalse(check_pwd(nums))
 
 
 if __name__ == '__main__':
