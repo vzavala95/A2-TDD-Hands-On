@@ -13,6 +13,11 @@ class TestCase(unittest.TestCase):
       # cannot have pwd < 8 characters
       self.assertFalse(check_pwd(nums))
 
+  def test3(self):
+      nums = "12345678910111213141516171819202122"
+      # cannot have pwd > 20 characters
+      self.assertFalse(check_pwd(nums))
+
 
 if __name__ == '__main__':
   unittest.main()
