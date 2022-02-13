@@ -3,6 +3,8 @@ def check_pwd(nums):
     value = True
     pwd_length = len(nums)
     has_upper = any(x.isupper() for x in nums)
+    has_lower = any(y.islower() for y in nums)
+
     if nums == "":
         value = False
 
@@ -14,6 +16,8 @@ def check_pwd(nums):
         # password length cannot exceed 20 characters
         value = False
     if not has_upper:
+        value = False
+    if not has_lower:
         value = False
     if value:
         return True
