@@ -2,9 +2,11 @@ def check_pwd(nums):
     # will return True no matter what
     value = True
     pwd_length = len(nums)
+    valid_symbol = ["~`!@#$%^&*()_+-="]
     has_upper = any(x.isupper() for x in nums)
     has_lower = any(y.islower() for y in nums)
     has_digit = any(z.isdigit() for z in nums)
+    has_symbol = any(sym in valid_symbol for sym in nums)
 
     if nums == "":
         value = False
@@ -21,6 +23,8 @@ def check_pwd(nums):
     if not has_lower:
         value = False
     if not has_digit:
+        value = False
+    if not has_symbol:
         value = False
     if value:
         return True
