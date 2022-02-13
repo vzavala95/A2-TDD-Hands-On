@@ -20,6 +20,12 @@ class TestCase(unittest.TestCase):
 
   def test4(self):
       nums = "kratos123456789"
+      # have to have a password with at least one uppercase letter
+      self.assertFalse(check_pwd(nums))
+
+  def test5(self):
+      nums = "KRATOS123456789"
+      # have to have a password with at least one lowercase letter
       self.assertFalse(check_pwd(nums))
 
 
