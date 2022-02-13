@@ -27,10 +27,15 @@ class TestCase(unittest.TestCase):
       nums = "KRATOS123456789"
       # have to have a password with at least one lowercase letter
       self.assertFalse(check_pwd(nums))
+
   def test6(self):
       nums = "therearenoDigits"
+      # have to include at least one digit in password
       self.assertFalse(check_pwd(nums))
 
-
+  def test7(self):
+      nums = "sYmbol??123"
+      # there has to be at least one symbol from the required symbols list "~`!@#$%^&*()_+-="
+      self.assertFalse(check_pwd(nums))
 if __name__ == '__main__':
   unittest.main()
