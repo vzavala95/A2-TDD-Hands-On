@@ -4,6 +4,7 @@ def check_pwd(nums):
     pwd_length = len(nums)
     has_upper = any(x.isupper() for x in nums)
     has_lower = any(y.islower() for y in nums)
+    has_digit = any(z.isdigit() for z in nums)
 
     if nums == "":
         value = False
@@ -18,6 +19,8 @@ def check_pwd(nums):
     if not has_upper:
         value = False
     if not has_lower:
+        value = False
+    if not has_digit:
         value = False
     if value:
         return True
